@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 import com.polytech.di.modele.Teleconseiller;
 
-public class Reponse extends Thread {
+public class Reponse {
 	private ListeAttente liste;
 	public int nombreTele = 2;
 	public int nombreCour = 8;
 	public int nbConseiller = 10;
 	public int nombreTeleMax = 5;
 	public ArrayList<Teleconseiller> listeConseiller;
-
+	//public int time;
 	public Reponse(ListeAttente liste) {
 		this.liste = liste;
 		this.listeConseiller = new ArrayList<Teleconseiller>(nbConseiller);
@@ -26,20 +26,20 @@ public class Reponse extends Thread {
 
 	}
 
-	public void run() {
-		while (liste.getTime() < 14400) {
+	public void runReponse(int time) {
+		if(time < 14400) {
 			// il y a plus de telephone en attents que teleconseilleur
 			// int nbTeleTraiter=0;
+			System.out.println("reponse ! "+time);
 			for (int i = 0; i < nbConseiller; i++) {
 				Teleconseiller conseiller = listeConseiller.get(i);
 				try {
-					if (conseiller.getTempsDispo() <= liste.getTime()) {
+					if (conseiller.getTempsDispo() < time) {
 						if (conseiller.getType() == 0) {
 							if (liste.listeTelephone.size() != 0) {
+								//repondre le telephone
 								int duree;
-
 								duree = liste.telephoneRepondre();
-
 								conseiller.setTempsDispo(conseiller.getTempsDispo() + duree);
 							} else {
 								conseiller.setType(1);

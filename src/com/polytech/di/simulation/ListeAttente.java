@@ -20,6 +20,7 @@ public class ListeAttente {
 			listeCouriel.add(c);
 			System.out.println("couriel "+c.getId()+" arrive!");
 		}
+		System.out.println("initialisation fini!");
 		
 	}
 	public void courielArriver() throws InterruptedException{
