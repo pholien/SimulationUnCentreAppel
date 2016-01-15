@@ -9,7 +9,7 @@ public class Telephone {
 	public Telephone(int id, int tempsArrive){
 		this.setId(id);
 		this.tempsArrive=tempsArrive;
-		this.duree=(int)(Math.random())+5;
+		this.duree=(int)(Math.random())*600+300;
 	}
 	public int getTempsArrive(){
 		return tempsArrive;

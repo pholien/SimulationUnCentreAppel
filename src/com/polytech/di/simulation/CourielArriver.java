@@ -10,12 +10,12 @@ public class CourielArriver {
 	public int expentialRandom(int t){
 		double z=Math.random();
 		
-		return (int)(5*(Math.exp(z)))+1;
+		return (int)(t*(Math.exp(-z)))+1;
 	}
 	
 	public void runCouriel(int time){
 		
-		System.out.println("couriel arrive! "+time);
+		//System.out.println("couriel arrive! "+time);
 		if(time<14400){
 			try {
 				if(time<3600 && time==lastTime){

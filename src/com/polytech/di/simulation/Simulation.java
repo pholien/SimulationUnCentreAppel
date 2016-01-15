@@ -11,9 +11,10 @@ public class Simulation {
 		AppelArriver appel=new AppelArriver(liste);
 		CourielArriver couriel=new CourielArriver(liste);
 		Reponse reponse=new Reponse(liste);
-		
+		reponse.output();
 		
 		while(time<14400){
+			//System.out.println("similation "+time);
 			appel.runAppel(time);
 			couriel.runCouriel(time);
 			reponse.runReponse(time);
@@ -21,6 +22,13 @@ public class Simulation {
 		}
 		
 		
+		liste.output();
+		
+		/*for(int i=0;i<10;i++){
+			double z=Math.random();
+			
+			System.out.println((int)(300*(Math.exp(-z)))+1); 
+		}*/
 		
 
 	}

@@ -11,12 +11,12 @@ public class AppelArriver{
 	public int expentialRandom(int t){
 		double z=Math.random();
 		
-		return (int)(5*(Math.exp(z)))+1;
+		return (int)(t*(Math.exp(-z)))+1;
 	}
 
 	public void runAppel(int time) {
 		if(time<14400){
-			System.out.println("appel arrive! "+time);
+			//System.out.println("appel arrive! "+time);
 			try {
 				if(time < 3600 && time == lastTime) {
 					liste.telephoneArriver();

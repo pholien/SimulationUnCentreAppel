@@ -6,9 +6,9 @@ public class Teleconseiller {
 	private int tempsDispo;
 	
 	public Teleconseiller(int id,int type,int temps){
-		this.setId(id);
-		this.setType(type);
-		this.setTempsDispo(temps);
+		this.id=id;
+		this.type=type;
+		this.tempsDispo=temps;
 	}
 
 	public int getType() {

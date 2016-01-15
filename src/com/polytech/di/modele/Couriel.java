@@ -12,7 +12,7 @@ public class Couriel {
 		this.setId(id);
 		
 		this.tempsArrive=tempsArrive;
-		this.duree=(int) Math.round(Math.random()*4+3);
+		this.duree=(int) Math.round(Math.random()*240+180);
 	}
 	
 	public int getTempsArrive(){
