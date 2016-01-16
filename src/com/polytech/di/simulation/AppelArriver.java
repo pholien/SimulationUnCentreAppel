@@ -11,7 +11,7 @@ public class AppelArriver{
 	public int expentialRandom(int t){
 		double z=Math.random();
 		
-		return (int)(t*(Math.exp(-z)))+1;
+		return (int)(-t*(Math.log(z)))+1;
 	}
 
 	public void runAppel(int time) {

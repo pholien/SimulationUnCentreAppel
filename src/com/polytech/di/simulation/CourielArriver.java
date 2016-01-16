@@ -10,7 +10,7 @@ public class CourielArriver {
 	public int expentialRandom(int t){
 		double z=Math.random();
 		
-		return (int)(t*(Math.exp(-z)))+1;
+		return (int)(-t*(Math.log(z)))+1;
 	}
 	
 	public void runCouriel(int time){
@@ -24,7 +24,7 @@ public class CourielArriver {
 				}
 				if(time>=3600 && time==lastTime){
 					liste.courielArriver();
-					lastTime=time+this.expentialRandom(60);
+					lastTime=time+this.expentialRandom(300);
 				}
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block

@@ -54,7 +54,6 @@ public class ListeAttente {
 		Telephone t;
 		t= listeTelephone.take();
 		t.setTempsReponse(time);
-		//System.out.println("telephone " + t.getId() + " reponse!");
 		tempsAttendT+=time-t.getTempsArrive();
 		return t.getDuree();
 	}
@@ -67,6 +66,8 @@ public class ListeAttente {
 		this.time = t;
 	}
 	public void output(){
+		System.out.println("nombre de courriels et telephone "+this.nbCouriel+" "+this.nbTelephone);
+
 		System.out.println("nombre de courriels non traités "+listeCouriel.size());
 		System.out.println("nombre de telephones non traités "+listeTelephone.size());
 
